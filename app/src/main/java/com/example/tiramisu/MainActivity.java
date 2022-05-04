@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 Intent intent = new Intent(MainActivity.this,LoginPage.class);
                 startActivity(intent);
+                finish();
             }
         };
         obj.start();

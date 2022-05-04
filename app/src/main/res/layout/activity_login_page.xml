@@ -43,7 +43,7 @@
             android:inputType="textPersonName"
             android:layout_marginTop="175dp"
             android:layout_marginRight="30dp"
-            android:text="Name"
+            android:text=""
             android:textSize="16sp" />
 
     </LinearLayout>
@@ -82,10 +82,36 @@
         android:layout_height="wrap_content"
         android:onClick="login"
         android:layout_marginLeft="165dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="150dp"
         android:backgroundTint="#10DCF6"
         android:text="LOGIN"
         android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="170dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:text="Not a user?"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="165dp"
+        android:backgroundTint="#4CAF50"
+        android:layout_marginTop="20dp"
+        android:text="Sign up" />
 
 
 </LinearLayout>

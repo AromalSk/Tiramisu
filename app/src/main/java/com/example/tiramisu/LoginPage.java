@@ -12,11 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginPage extends AppCompatActivity implements View.OnClickListener {
-    Button login;
+    Button login,signup;
     EditText un,pw;
     TextView labeltext;
-    String username = "admin";
-    String password = "123456";
+    String user ;
+    String pass ;
     int clickcount = 3;
 
 
@@ -27,9 +27,18 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
 
 
         login = (Button) findViewById(R.id.button);
+        signup = (Button) findViewById(R.id.button3);
         un = (EditText)findViewById(R.id.username);
         pw = (EditText)findViewById(R.id.password);
         labeltext = (TextView)findViewById(R.id.labeltext);
+
+
+        Intent intentfromreg = getIntent();
+        user = intentfromreg.getStringExtra("username");
+        pass = intentfromreg.getStringExtra("password");
+        pw.setEnabled(false);
+        un.setText(user);
+        pw.setText(pass);
        /* USING ANONYMOUS INNER CLASS*/
      /*   login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +59,12 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
 
 
         /*implement listeners*/
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Register();
+            }
+        });
          login.setOnClickListener(this);
     }
 
@@ -57,7 +72,7 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
     public void onClick(View view) {
         String uname = un.getText().toString();
         String pword = pw.getText().toString();
-        if(username.equals(uname)&& password.equals(pword)) {
+        if(user.equals(uname)&& pass.equals(pword)) {
 
             Intent i = new Intent(getApplicationContext(), HomePage.class);
             startActivity(i);
@@ -74,5 +89,9 @@ public class LoginPage extends AppCompatActivity implements View.OnClickListener
         }
     }
 
+    public void Register(){
+        Intent sign = new Intent(getApplicationContext(),Register.class);
+        startActivity(sign);
+    }
 }
 
